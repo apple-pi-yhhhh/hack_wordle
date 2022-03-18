@@ -1,9 +1,25 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script language="javascript" type="text/javascript">
-var all_words = {};
-url = `https://topi.cf/hack_wordle/words.json`;
-
-$.getJSON(url, (data) => { all_words = data });
-console.log(all_words);
-
-</script>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript">
+    var all_words = {};
+    url = `https://topi.cf/hack_wordle/words.json`;
+    $.getJSON(url, (data) => { all_words = data });
+    function check(){
+      var ans = all_words
+        .filter( function( value ) { return value.match( new RegExp( document.getElementById("key1").value ) ) })
+        .filter( function( value ) { return value.match( new RegExp( document.getElementById("key2").value ) ) })
+        .filter( function( value ) { return value.match( new RegExp( document.getElementById("key3").value ) ) })
+        .filter( function( value ) { return value.match( new RegExp( document.getElementById("key4").value ) ) })
+        .filter( function( value ) { return value.match( new RegExp( document.getElementById("key5").value ) ) });
+      console.log(ans)
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="key1"/>
+  <input type="text" id="key2"/>
+  <input type="text" id="key3"/>
+  <input type="text" id="key4"/>
+  <input type="text" id="key5"/>
+  <button type="button" onclick="check()"/>
+</body>
