@@ -1,0 +1,16 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript">
+    var all_words = {};
+    $.getJSON(`https://topi.cf/hack_wordle/words.json`, (data) => { all_words = data });
+    
+    var str = all_words.join('');
+    var ex = /a/g;  // 正規表現
+    var arr = str.match(ex);
+    if (arr == null){ var count = 0 }else{ var count = arr.length }
+    
+    document.appendChild(`<h1>${count}</h1>`)
+  </script>
+</head>
+<body>
+</body>
