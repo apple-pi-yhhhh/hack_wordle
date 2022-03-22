@@ -3,13 +3,6 @@
   <script language="javascript" type="text/javascript">
     var all_words = {};
     $.getJSON(`https://topi.cf/hack_wordle/words.json`, (data) => { all_words = data });
-    
-    var str = all_words.join('');
-    var ex = /a/g;  // 正規表現
-    var arr = str.match(ex);
-    if (arr == null){ var count = 0 }else{ var count = arr.length }
-    
-    console.log(count);
   </script>
 </head>
 <body>
