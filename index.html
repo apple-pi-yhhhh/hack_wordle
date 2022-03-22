@@ -12,7 +12,7 @@
         .filter( function( value ) { return value.match( new RegExp( document.getElementById("key4").value ) ) })
         .filter( function( value ) { return value.match( new RegExp( document.getElementById("key5").value ) ) });
       console.log(ans)
-      document.write(`<h1>${ans}</h1>`)
+      document.appendChild(`<h1>${ans}</h1>`)
     }
   </script>
 </head>
